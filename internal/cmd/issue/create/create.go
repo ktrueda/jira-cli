@@ -218,7 +218,7 @@ func (cc *createCmd) askQuestions() error {
 	}
 
 	ans := struct{ ParentIssueKey, Summary, Body string }{}
-	err := survey.Ask(qs, &ans)
+	err := survey.Ask(qs, &ans, survey.WithShowCursor(true))
 	if err != nil {
 		return err
 	}
